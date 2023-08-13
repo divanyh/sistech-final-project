@@ -1,10 +1,11 @@
 import ArticleCard from "@/components/ArticleCard";
 import ArticleForm from "@/components/ArticleForm";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { getCookie, hasCookie } from "cookies-next";
+import { cookies } from "next/headers";
 
 async function getAllArticles() {
   const res = await fetch(`${process.env.BASE_URL}/articles`, {
+    method: 'GET',
     headers: {
       Authorization: process.env.TOKEN,
     },
