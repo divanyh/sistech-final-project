@@ -1,7 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
 import ArticleForm from "@/components/ArticleForm";
-import { getCookie, hasCookie } from "cookies-next";
-import { cookies } from "next/headers";
 
 async function getAllArticles() {
   const res = await fetch(`${process.env.BASE_URL}/articles`, {
